@@ -1,0 +1,83 @@
+\section{Kurven}
+
+%TODO:4 Arten wie man das Integral berechnet. Siehe: Analysis für Dummies
+
+
+\subsection{Darstellungsarten von Kurven \formelbuch{49ff}} %Seitenzahlen OK 10 Auflage
+  \begin{minipage}[t]{3.5cm}
+    Funktion (explizit) \\
+    $ y = f(x)$ \\
+        \tiny{(Bronstein Form 2.4)}
+  \end{minipage}
+  \begin{minipage}[t]{6cm}    
+    Koordinatengleichung (implizit) \\
+    $ F(x,y) = 0 $ \\
+        {\tiny{(Bronstein Form 2.5)}}\\
+        \\
+    $ F(\varphi,r) = 0 $ 
+  \end{minipage}
+  \begin{minipage}[t]{5.5cm}    
+    Parameterform \\
+    $ \left( \begin{array} {l} x(t) \\ y(t) \end{array} \right) =
+          \left( \begin{array} {l} \Psi(t) \\ \varphi(t) \end{array} \right)$\\
+        {\tiny{(Bronstein Form 2.6)}}\\
+     \\
+     $ \left(
+     \begin{array}{l} 
+	    r = g(t) \\
+	    \varphi = h(t)
+     \end{array} 
+     \right)$\\
+     \\
+     {\small{mit $t \in \mathbb{I}$, wobei $\mathbb{I}$ ein Intervall ist}}
+  \end{minipage} 
+  \begin{minipage}[t]{3cm}
+      Polarform x\\
+      $ r=f(\varphi) mit \varphi \in \mathbb{D}_{\textit{f}} $ \\
+        {\tiny{(Bronstein Form 3.427)}}
+    \end{minipage}\\
+
+ % \textit{Hat man die explizite Form gegeben, so hat man automatisch die Implizite- und Parameter-Form}
+
+\subsection{Umrechnen diverser Systeme \formelbuch{197}} %Seitenzahlen OK 10 Auflage
+\renewcommand{\arraystretch}{1}
+\begin{tabular}{|ll|l|}
+	\hline 
+von & nach & Umrechnung \\  \hline \hline
+Parameter 
+  & $\Rightarrow$ explizit
+  & $t = f(x) \qquad y = g(f(x))$\\	\hline
+Ex- bzw. implizit 
+  & $\Rightarrow$ Polar
+  &  Ersetze: \quad $ x=r \cdot \cos(\varphi) \qquad y=r \cdot \sin(\varphi) \qquad x^2 + y^2=r^2$\\ \hline
+Polar 
+  & $\Rightarrow$ implizit
+  & Ersetze: \quad $r \cdot \cos(\varphi)=x \qquad r \cdot \sin(\varphi)=y \qquad r=\sqrt{x^{2}+y^{2}}$\\ \hline
+Polar
+  & $\Rightarrow$ Parameterform
+  & $\left( \begin{array} {l} x(\varphi) \\ y(\varphi) \end{array} \right) =
+          \left( \begin{array} {l} r(\varphi) \cos(\varphi) \\ r(\varphi) \sin(\varphi) \end{array}
+          \right) = \left( \begin{array} {l} r \cdot \cos(\varphi) \\ r \cdot \sin(\varphi) \end{array}
+          \right)$ \\	\hline
+Explizit
+  & $\Rightarrow$ Parameter
+  & $\left( \begin{array} {l} x(t) \\ y(t) \end{array} \right) =
+          \left( \begin{array} {l} x(t) \\ t \end{array}
+          \right)$ \\ \hline
+Einzelner Punkt  
+  & $\Rightarrow$ Polar
+  & $ r = \sqrt{x^2 + y^2} \qquad
+  \varphi = \left.
+  		 \begin{cases} 
+  			\arctan \left(\frac{y}{x}\right) + \pi   &x < 0\\
+             \arctan \left(\frac{y}{x}\right)   & x > 0\\
+             \frac{\pi}{2}      & x = 0;\; y > 0\\
+             -\frac{\pi}{2}     & x = 0;\; y < 0\\
+             \text{unbestimmt}    & x = y = 0
+          \end{cases} 
+            \right\} \quad  = \quad
+          \begin{cases}
+             \arccos \left(\frac{x}{r}\right) & x \geqq 0 \\
+             -\arccos \left(\frac{x}{r}\right) & x<0 
+          \end{cases} $ \\ \hline
+\end{tabular}

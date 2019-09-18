@@ -1,0 +1,106 @@
+\section{Anhang}
+	\subsection{Integrations Methoden}
+		\subsubsection{Substitutionsmethode}
+			
+			\paragraph{Raten und Prüfen}\
+						
+				\begin{minipage}[c]{.2\textwidth}
+					Bsp.: $ \int \sin{(3x)} dx $
+				\end{minipage}
+				\begin{minipage}{.8\textwidth}
+					\begin{enumerate}
+						\item bekannte/ vereinfachte Funktion integerieren \quad $\Rightarrow \int \sin{(z)} dz = -\cos(z) + C $
+						\item z ersetzen:\quad $ z := 3x $ \quad $ \Rightarrow \quad -\cos(3x) + C $
+						\item ableiten:\quad $ \frac{d}{dx} \left( -\cos{(3x)} + C \right) = 3 \cdot\sin{(3x)} $ 
+						\item überprüfen:\quad $ 3 \cdot\sin{(3x)} \neq  \sin{(3x)} $
+						\item korrigieren:\quad $ \int \sin{(3x)} dx = \underline{-\frac{1}{3} \cdot \cos{(3x)} + C}$
+						
+					\end{enumerate}
+				\end{minipage}
+			
+			\paragraph{Schritt für Schritt}\
+			
+				\begin{minipage}[c]{.2\textwidth}
+					Bsp.: $ \int \sin (3-7 x) d x $
+				\end{minipage}
+				\begin{minipage}{.8\textwidth}
+					\begin{enumerate}
+						\item substitutieren und ableiten:\quad $z=3-7 x \xLongleftrightarrow{\text{nach x ableiten}} \frac{d z}{d x}=-7 \xLongleftrightarrow{\cdot dx \quad \& \quad :-7} d x=\frac{d z}{-7}$
+						\item z einsetzen: \quad$\int \sin (z) \cdot \frac{d z}{-7}$
+						\item Integral nach z auflösen:\quad $\int \sin (z) \cdot \frac{d z}{-7}=-\frac{1}{7} \int \sin (z) d z =\frac{1}{7} \cdot \cos (z)+C$
+						\item Substitution von z rückgängig machen:\quad $\frac{1}{7} \cdot \cos (z)+C= \underline{\frac{1}{7} \cdot \cos (3-7 x)+C}$
+					\end{enumerate}				
+				\end{minipage}
+		
+		\subsubsection{Partiell integrieren}
+		%TODO: Bild mit Kasten einfügen (von Hand gezeichnet), rechts via minipage
+			\paragraph{Standard-Verfahren}\
+			
+				\begin{minipage}[c]{.2\textwidth}
+					Bsp.: $ \int x \cdot e^x dx $
+				\end{minipage}
+				\begin{minipage}{.8\textwidth}
+					\begin{enumerate}
+						\item Partiell integrieren: \quad $e^{x} x-\int e^{x} d x$
+						\item $e^x$ integrieren: \quad $e^{x} x-e^{x}+C$
+						\item Ausdruck vereinfachen (Algebra): \quad $\underline{e^{x}(x-1)+C}$
+					\end{enumerate}				
+				\end{minipage}
+			
+			\paragraph{Integrieren im Kreis}\
+			
+				\begin{minipage}[c]{.2\textwidth}
+					Bsp.: $ \int \sin(x) \cdot \cos(x) dx $
+				\end{minipage}
+				\begin{minipage}{.8\textwidth}
+					\begin{enumerate}
+						\item partiell integrieren: \quad $\sin(x) \cdot \sin(x) - \int \sin(x) \cdot \cos(x) = \sin^2(x) - \int \sin(x) \cdot \cos(x)$
+						\item Algebra anwenden: \quad $ \int \sin(x) \cdot \cos(x) dx = \sin^2(x) - \int \sin(x) \cdot \cos(x)$ 
+						\item[] \qquad $\xLongleftrightarrow{+\int\sin(x) \cdot \cos(x)} \quad 2\int \sin(x) \cdot \cos(x) dx = \sin^2(x)+C $
+						\item[] \qquad \qquad \qquad $\xLongleftrightarrow{:2} \quad \int \sin(x) \cdot \cos(x) dx = \underline{\dfrac{\sin^2(x)}{2} + C}$
+					\end{enumerate}				
+				\end{minipage}
+		
+		\subsubsection{Trigonometrische Substitution}
+		%TODO: S.227 Analyis für Dummies Übungsbuch
+			\begin{minipage}[c]{.2\textwidth}
+				Bsp.: $ \int \dfrac{1}{\sqrt{4x^2+25}} dx $
+			\end{minipage}
+			\begin{minipage}{.8\textwidth}
+				\begin{enumerate}
+					\item 
+				\end{enumerate}				
+			\end{minipage}
+		
+		\subsubsection{Rationale Ausdrücke integrieren}
+			\paragraph{Algebra anwenden}\
+			
+				\begin{minipage}[c]{.2\textwidth}
+					Bsp.: $\int \frac{\left(x^{2}+5\right)(x-3)^{2}}{\sqrt{x}} d x$
+				\end{minipage}
+				\begin{minipage}{.8\textwidth}
+					\begin{enumerate}
+						\item Zähler aus multiplizieren und Nenner in Exponentialform bringen:\quad
+						$ \int \dfrac{x^{4}-6 x^{3}+14 x^{2}-30 x+45}{x^{\frac{1}{2}}} d x $
+						\item Ausdruck in Terme aufteilen: \quad$ \int \left( x^{\frac{7}{2}}-6 x^{\frac{5}{2}}+14 x^{\frac{3}{2}}-30 x^{\frac{1}{2}}+45 x^{\frac{1}{2}} \right) d x $
+						\item Summenregel:\quad $ \int x^{\frac{7}{2}} d x-6 \int x^{\frac{5}{2}} d x+14 \int x^{\frac{3}{2}} d x-30 \int x^{\frac{1}{2}} d x+45 \int x^{\frac{1}{2}} d x $
+						\item Potenzregel:\quad $ \underline{ \frac{2}{9} x^{\frac{9}{2}}-\frac{12}{7} x^{\frac{7}{2}}+\frac{28}{5} x^{\frac{5}{2}}-20 x^{\frac{3}{2}}+90 x^{\frac{1}{2}}+C} $
+					\end{enumerate}				
+				\end{minipage}
+		
+		
+			\paragraph{Partialbruch}\
+			
+				\begin{minipage}[c]{.2\textwidth}
+					Bsp.: $ \frac{x^{4}-x^{3}-5 x+4}{(x-2)\left(x^{2}+3\right)} $
+				\end{minipage}
+				\begin{minipage}{.8\textwidth}
+					\begin{enumerate}
+						\item Bsp. \quad {$ \begin{cases} \text{ Z"ahlergrad > Nennergrad } & \Rightarrow \text{ Polynomdivision: } \quad  x+1+\frac{-x^{2}-2 x+10}{(x-2)\left(x^{2}+3\right)} \\
+						\text{ Z"ahlergrad < Nennergrad } &  \Rightarrow \text{ echt gebrochen }
+						\end{cases} $}
+						\item Partialbruchzerlegung (echt gebrochener Teil): $ \frac{-x^{2}-2 x+10}{(x-2)\left(x^{2}+3\right)}= \frac{A}{x-2}+\frac{B x+C}{x^{2}+3} = \frac{2}{7(x-2)}+\frac{-9 x-32}{7\left(x^{2}+3\right)}$
+						\item echt und unecht gebrochener Teil integrieren: $ \int\left[x+1+\frac{2}{7(x-2)}+\frac{9 x-32}{7\left(x^{2}+3\right)}\right] d x $
+						\item Summenregel: $ \underline{\int x dx+\int d x+\frac{2}{7} \int \frac{1}{x-2} d x-\frac{9}{7} \int \frac{x}{x^{2}+3} d x-\frac{32}{7} \int \frac{1}{x^{2}+3} dx} $
+					\end{enumerate}				
+				\end{minipage}

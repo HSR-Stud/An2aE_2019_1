@@ -1,0 +1,106 @@
+% 
+%Schriftgrösse, Layout, Papierformat, Art des Dokumentes
+\documentclass[10pt,twoside,a4paper,fleqn]{article}
+%Einstellungen der Seitenränder
+\usepackage[left=0.5cm,right=0.5cm,top=0.5cm,bottom=0.5cm,includeheadfoot]{geometry}
+
+% Sprache, Zeichensatz, packages ======================================================================
+\usepackage[utf8]{inputenc} % Zeichenkodierung: UTF-8 (für Umlaute)
+\usepackage[ngerman]{babel,varioref} % Deutsche Sprache
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{fancybox}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{lastpage}
+\usepackage{wrapfig}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{verbatim}
+\usepackage{pdfpages}
+\usepackage[T1]{fontenc}
+\usepackage{multicol} %Spalten, für integrale.tex
+\usepackage{rotating} % Rotating table, für tabellen.tex; [Richtung der Rotation] => [figuresright] oder [figuresleft]
+%\usepackage{wasysym}			% Blitz
+%\usepackage{esint}				% erweiterte Integralsymbole
+\usepackage{extarrows}			% Packet für langer Pfeil mit Text
+
+
+\usepackage{tabularx}
+%Farben für tabelle
+\usepackage{color, colortbl}
+\definecolor{Gray}{gray}{0.9}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+
+
+%Eigene Befehle =======================================================
+%Custom functions 
+\DeclareMathOperator{\arccot}{arccot}  %für arccot
+
+%definiere Befehl:
+\newcommand{\formelbuch}[1]{\textcolor{red}{\textit{#1}}}	%Verweis auf Seite im Formelbuch
+
+
+%%Subsections
+%
+%\usepackage{titlesec}
+%
+%\setcounter{secnumdepth}{4}
+%
+%\titleformat{\paragraph}
+%{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+%\titlespacing*{\paragraph}
+%{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+%Layout
+\raggedbottom
+
+
+%pdf info
+\hypersetup{pdfauthor={\authorinfo},pdftitle={\titleinfo},colorlinks=false}
+%linkbordercolor=white
+\author{\authorinfo}
+\title{\titleinfo}
+
+%Kopf- und Fusszeile
+\pagestyle{fancy}
+\fancyhf{}
+%Linien oben und unten
+\renewcommand{\headrulewidth}{0.5pt} 
+\renewcommand{\footrulewidth}{0.5pt}
+
+
+%Kopfzeilen
+\fancyhead[R]{Seite \thepage { }von \pageref{LastPage}}
+\fancyhead[L]{\titleinfo{ }\tiny{\textit{(\versioninfo)}}}
+%Fusszeilen
+\fancyfoot[L]{\footnotesize{\authorinfo}}
+\fancyfoot[C]{\footnotesize{\licence \quad $\rightarrow$ \href{https://github.com/HSR-Stud}{Github: HSR-Stud}}}
+\fancyfoot[R]{\footnotesize{\today}}
+
+\setlength{\parindent}{0pt}
+
+
+
+% Custom Commands ===============================================
+%\renewcommand{\thesubsection}{\arabic{subsection}}
+\newcommand{\me}[1]{\ensuremath{\left\{#1\right\}}}
+\newcommand{\dme}[2]{\ensuremath{\left\{#1\,\vert\,#2 \right\}}}
+\newcommand{\abs}[1]{\ensuremath{\left\vert#1\right\vert}}
+\newcommand{\un}[1]{\; \unit{#1} }
+\newcommand{\unf}[2]{\;\left[ \unitfrac{#1}{#2} \right]}
+\newcommand{\norm}[2][\relax]{\ifx#1\relax \ensuremath{\left\Vert#2\right\Vert}\else \ensuremath{\left\Vert#2\right\Vert_{#1}}\fi}
+\newcommand{\enbrace}[1]{\ensuremath{\left(#1\right)}}
+\newcommand{\nira}[1]{\ensuremath{\overset{n \rightarrow \infty}{\longrightarrow}}}
+\newcommand{\os}[2]{\ensuremath{\overset{#1}{#2}}}
+\makeatletter
+\newcommand{\Ra}[0]{\ensuremath{\Rightarrow}}
+\newcommand{\ra}[0]{\ensuremath{\rightarrow}}
+\newcommand{\gk}[1]{\ensuremath{\left\lfloor#1\right\rfloor}}
+\newcommand{\sprod}[2]{\ensuremath{%
+		\setbox0=\hbox{\ensuremath{#2}}
+		\dimen@\ht0
+		\advance\dimen@ by \dp0
+		\left\langle #1\rule[-\dp0]{0pt}{\dimen@},#2\right\rangle}}
+
+\newcommand{\tab}[1][1cm]{\hspace*{#1}}

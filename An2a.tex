@@ -1,0 +1,31 @@
+%Dokumentinformationen	======================================================================
+\newcommand{\titleinfo}{Analysis 2a - Formelsammlung}
+\newcommand{\authorinfo}{Dev4Future \& S.Walker, sowie weitere Autoren}
+\newcommand{\versioninfo}{FS \ 2019}
+\newcommand{\licence}{CC BY-NC-SA}
+
+
+%weitere Autoren: ==========================================================================
+%Martin Schmidt, S.Walker, Dev4Future, Köppel und Konsortium, F. Braun, L. Schmid, U. Giger, R. Koller, E. Ammann, S. Arnold, C. Gwerder, S. Koerner, L. Leuenberger
+
+
+
+% Dokumenteinstellungen	 ======================================================================
+\include{header/header}			% standard header
+
+
+
+% Sections ======================================================================
+\begin{document}
+	\input{sections/integral_regeln.tex}
+	\input{sections/gleichungen.tex}
+	\input{sections/kurven_darstellung.tex}
+	%\input{sections/kurven_eigenschaften.tex}
+	\input{sections/kurven_beispiele.tex}
+	\newpage
+	\input{sections/kurven_formeln.tex}
+	\newpage
+	\includepdf[pages=-, scale=1.078, frame= true]{sections/integral_tabelle-mendez.pdf}
+%   \input{sections/integral_tabelle.tex}
+	\input{sections/integral_methoden.tex}
+\end{document}
